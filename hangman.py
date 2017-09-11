@@ -1,18 +1,14 @@
 def hangman(word):
-    wrong_guesses = 0   #Guess counter
-    stages = ["", "________      ", "|      |      ", "|      0      ", "|     /|\     ", "|     / \     ", "|"] #Hangman body stages
-    remaining_letters = list(word) #list of letters that are still available (not used)
+    wrong_guesses = 0
+    stages = ["", "________      ", "|      |      ", "|      0      ", "|     /|\     ", "|     / \     ", "|"]
+    remaining_letters = list(word)
     letter_board = ["__"] * len(word)
     win = False
-
-    print('########__Hangman__########')
-
-    while wrong_guesses < len(stages) - 1: #6 attempts
+    print('Welcome to Hangman')
+    while wrong_guesses < len(stages) - 1:
         print('\n')
-
-        guess = input("Guess a letter: \n")
-
-        if guess in remaining_letters:  #check if letter has been used before
+        guess = input("Guess a letter")
+        if guess in remaining_letters:
             character_index = remaining_letters.index(guess)
             letter_board[character_index] = guess
             remaining_letters[character_index] = '$'
