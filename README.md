@@ -1,2 +1,2 @@
-# Hangman_Python
+# hangman-app
 Hangman created in python
